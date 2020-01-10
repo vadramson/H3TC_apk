@@ -1,0 +1,110 @@
+<ion-header>
+  <ion-navbar hideBackButton="true">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+      <ion-title> <span class="ion_title">Home H3TC Zone</span></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-refresher (ionRefresh) = "doRefresh($event);">
+        <ion-refresher-content pullingText="Pull to Refresh"
+                               pullingIcon="wrench"
+                               refreshingSpinner="circles"
+                               refreshingText="... H3TC Zone.."
+        >
+        </ion-refresher-content>
+    </ion-refresher>
+  <h3>Main Menu</h3>
+    <table id="main_menu">
+        <tr>
+            <td>
+                <ion-card>
+                    <ion-card-header class="i_head">
+                        <h1><ion-icon name="ios-contact"></ion-icon> </h1>
+                    </ion-card-header>
+                    <ion-card-content>
+                        <button (click)="myProfile();"> Student Profile </button>
+                    </ion-card-content>
+                </ion-card>
+            </td>
+             <td>
+                <ion-card>
+                    <ion-card-header class="i_head">
+                        <h1><ion-icon name="ios-paper"></ion-icon> </h1>
+                    </ion-card-header>
+                    <ion-card-content>
+                        <button (click)="courseReg();"> Course Registration </button>
+                    </ion-card-content>
+                </ion-card>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <ion-card>
+                    <ion-card-header class="i_head">
+                        <h1><ion-icon name="ios-bookmarks-outline"></ion-icon> </h1>
+                    </ion-card-header>
+                    <ion-card-content>
+                        <button (click)="formB();">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Form B </button>
+                    </ion-card-content>
+                </ion-card>
+            </td>
+             <td>
+                <ion-card>
+                    <ion-card-header class="i_head">
+                        <h1><ion-icon name="aperture"></ion-icon> </h1>
+                    </ion-card-header>
+                    <ion-card-content>
+                        <button (click)="caResults();"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CA Results </button>
+                    </ion-card-content>
+                </ion-card>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <ion-card>
+                    <ion-card-header class="i_head">
+                        <h1><ion-icon name="ios-list-outline"></ion-icon> </h1>
+                    </ion-card-header>
+                    <ion-card-content>
+                        <button (click)="examResults();"> Exam Results </button>
+                    </ion-card-content>
+                </ion-card>
+            </td>
+             <td>
+                <ion-card>
+                    <ion-card-header class="i_head">
+                        <h1><ion-icon name="ribbon"></ion-icon> </h1>
+                    </ion-card-header>
+                    <ion-card-content>
+                        <button (click)="semester_Results();"> Semester Results </button>
+                    </ion-card-content>
+                </ion-card>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <ion-card>
+                    <ion-card-header class="i_head">
+                        <h1><ion-icon name="ribbon"></ion-icon> </h1>
+                    </ion-card-header>
+                    <ion-card-content>
+                        <button (click)="transcript_request();"> Academic Transcript </button>
+                    </ion-card-content>
+                </ion-card>
+            </td>
+            <td>
+                <ion-card class="logout">
+                    <ion-card-header class="i_head">
+                        <h1><ion-icon name="ios-power"></ion-icon> </h1>
+                    </ion-card-header>
+                    <ion-card-content>
+                        <button (click)="logout();"> &nbsp;&nbsp;&nbsp;&nbsp; Log Out </button>
+                    </ion-card-content>
+                </ion-card>
+            </td>
+        </tr>
+    </table>
+</ion-content>

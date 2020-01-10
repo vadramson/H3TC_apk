@@ -1,0 +1,7 @@
+{
+  "name": "H3TC_APK",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

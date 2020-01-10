@@ -1,0 +1,33 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<div id="custom-overlay" [style.display]="splash ? 'flex': 'none' ">
+    <div class="flb">
+        <div class="Aligner-item Aligner-item--top"></div>
+        <h1> <strong> H3TC Zone..</strong></h1>
+        <div class="Aligner-item Aligner-item--bottom"></div>
+    </div>
+</div>
+
+
+<ion-content padding>
+    <ion-card>
+        <ion-card-header>
+            <strong> <span class="authen_tication"> <h1> <ion-icon name="ion-unlocked"></ion-icon>&nbsp;&nbsp; H3TC Zone Auth</h1></span></strong>
+        </ion-card-header>
+        <ion-card-content>
+            <ion-list no-line>
+                    <ion-item>
+                        <ion-input [(ngModel)]="userData.username" type="text" class="imt" required placeholder="Username"></ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-input [(ngModel)]="userData.password" type="password" class="imt" required placeholder="Password"></ion-input>
+                    </ion-item>
+                <button ion-button block  (click)="login()" color="login"><ion-icon name="log-in"></ion-icon>&nbsp;&nbsp; LOGIN </button>
+            </ion-list>
+        </ion-card-content>
+    </ion-card>
+</ion-content>

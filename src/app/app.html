@@ -1,0 +1,21 @@
+<ion-split-pane [when]="shouldShowPane">
+    <ion-menu  [content]="content">
+      <ion-header class="ihead">
+        <ion-toolbar>
+            <ion-title><span class="ion_title"><ion-icon name="book"></ion-icon>  H3TC Menu</span></ion-title>
+        </ion-toolbar>
+      </ion-header>
+
+      <ion-content class="sidebar">
+        <ion-list class="iList">
+          <button icon-left menuClose ion-item *ngFor="let p of pages" [class.activePage]="checkActive(p)" (click)="openPage(p)">
+              <span class="page_tittles"> <ion-icon name="{{p.icon}}"></ion-icon> {{p.title}}</span>
+          </button>
+        </ion-list>
+      </ion-content>
+
+    </ion-menu>
+
+    <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+    <ion-nav [root]="rootPage" #content swipeBackEnabled="false"  main></ion-nav>
+</ion-split-pane>

@@ -1,0 +1,60 @@
+<!--
+  Generated template for the RequiredPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar hideBackButton="false">
+      <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+      <ion-title> <span class="ion_title"> Required Courses </span></ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-card>
+        <ion-card-header style="text-align: center; color: white;">
+            Register Required Courses
+        </ion-card-header>
+        <ion-card-content>
+            <ion-item>
+                <ion-label>Course</ion-label>
+                <ion-select (ionChange)="onContextChange($event)" [(ngModel)]="majorCourseData.id" multiple="false" okText="Select" cancelText="Dismiss">
+                    <ion-option *ngFor="let crse of list_courses" [value]="crse.id">{{ crse.course }}</ion-option>
+                </ion-select>
+            </ion-item>
+            <ion-list>
+                <button ion-button (click)="addRequired()" color="magic">
+                    <ion-icon name="boat"></ion-icon>&nbsp;&nbsp; Add Course
+                </button>
+            </ion-list>
+        </ion-card-content>
+    </ion-card>
+    <ion-card style="border-top-left-radius: 20px;  border-bottom-right-radius: 20px;" *ngFor="let maj of my_majorCourses" id="ordersOpen">
+        <ion-card-content>
+            <ion-list>
+                <ion-item-sliding id="ordersOpen">
+                    <ion-item id="ordersOpen">
+                    <ion-avatar item-start>
+                        <ion-icon name="ios-paper"></ion-icon>
+                    </ion-avatar>
+                    <p style="color: #734600"><span style="color: deepskyblue;"> {{ maj.course_name }} </span></p>
+                    <p style="color: #734600">
+                        CV: <span style="color: deepskyblue;">{{ maj.course_credit }} </span> &nbsp;&nbsp;&nbsp;&nbsp;
+                        Code: <span style="color: deepskyblue;">{{ maj.course_code }} </span>
+                    </p>
+                    </ion-item>
+                    <ion-item-options>
+                     <button ion-button color="danger" (click)="dropRequired(maj.id)" ><ion-icon name="trash"></ion-icon> Drop</button>
+                    </ion-item-options>
+                </ion-item-sliding>
+            </ion-list>
+        </ion-card-content>
+    </ion-card>
+</ion-content>
